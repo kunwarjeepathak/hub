@@ -3,11 +3,12 @@ import Header   from './components/Header';
 import Sidebar  from './components/Sidebar';
 import QAList   from './components/QAList';
 
-export type Category = 'all' |  'python' ;
+export type Category = 'all' |  'python' |  'machineLearning';
 
 const categories = [
   { key: 'all' as Category,        label: 'All' },
-  { key: 'python' as Category,    label: 'Python' }
+  { key: 'python' as Category,    label: 'Python' },
+  { key: 'machineLearning' as Category,    label: 'Machine Learning' }
 ];
 
 function App() {

@@ -212,8 +212,135 @@ asyncio.run(main())
 `
     }
   ]
-}
+},
+{
+  "category": "machineLearning",
+  "title": "K-Nearest Neighbors (KNN) — A Gentle Story-Driven Guide",
+  "subItems": [
+    {
+      "question": "What is K-Nearest Neighbors (KNN) and how can a beginner understand it?",
+      "answerMd": `
+# 🏡 K-Nearest Neighbors (KNN) — A Beginner’s Story
 
+## 👥 Who’s Who?
+
+| Character         | Role                                           |
+|-------------------|------------------------------------------------|
+| Newcomer          | A question mark arriving in Town DataSpace     |
+| Townsfolk         | Points with known labels (their identities)    |
+| Map & Ruler       | The way we measure closeness (distance metric) |
+| Town Elder (KNN)  | The guide who asks the K closest Townsfolk     |
+| Town DataSpace    | The flat land where everyone lives            |
+
+---
+
+## 📖 The Story
+
+Imagine a small town where every resident wears a colored badge—red or blue. A new visitor arrives and wonders, “Which badge should I wear?” The Town Elder measures how far the visitor is from each resident, then visits the K closest people and asks for advice. If most wear red, the visitor puts on red; if most wear blue, the visitor chooses blue. Simple, right? That’s the heart of K-Nearest Neighbors.
+
+---
+
+## 🎯 What Are We Trying to Achieve?
+
+| Goal                   | Why It Matters                                |
+|------------------------|-----------------------------------------------|
+| Local Similarity       | Visitor matches the look of their nearest neighbors |
+| Simplicity             | No complicated training—just remember and compare |
+| Flexibility            | Works for categories (badges) and numbers (ages)    |
+| Transparency           | You can see exactly which neighbors decided the outcome |
+
+---
+
+## 🗺️ The KNN Process in 5 Easy Steps
+
+\`\`\`
+Newcomer appears
+      │
+      ▼
+Measure distance to every Townsfolk
+      │
+      ▼
+Sort distances from nearest to farthest
+      │
+      ▼
+Pick the top K closest residents
+      │
+      ▼
+Take a vote (or average) and decide the newcomer’s badge
+\`\`\`
+
+1. **Pick K**  
+   Decide how many neighbors to ask. A small K (like 3) listens to only a few residents. A larger K (like 10) takes more opinions.
+
+2. **Measure Distance**  
+   Use a simple ruler:  
+   - If it’s a flat town, use the straight-line distance (Euclidean):  
+     \\\\\\\\[
+       d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+     \\\\\\\\]
+
+3. **Find Neighbors**  
+   Sort all residents by their distance.
+
+4. **Vote or Average**  
+   - For badges (classification): see which color appears most.  
+   - For numbers (regression): take the average of neighbors’ values.
+
+5. **Assign to Newcomer**  
+   The visitor leaves with the badge or number decided by the group.
+
+---
+
+## 🎲 A Simple Town Example
+
+| X  | Y  | Badge (Label) |
+|----|----|---------------|
+| 1  | 2  | Red           |
+| 2  | 3  | Red           |
+| 3  | 3  | Red           |
+| 6  | 8  | Blue          |
+| 7  | 8  | Blue          |
+| 8  | 7  | Blue          |
+
+A visitor stands at (5, 5). Let K = 3.
+
+| Neighbor  | Distance | Badge |
+|-----------|----------|-------|
+| (3,3)     | 2.83     | Red   |
+| (6,8)     | 3.16     | Blue  |
+| (2,3)     | 3.61     | Red   |
+
+The 3 closest badges: Red, Blue, Red → 2 Reds vs 1 Blue → Visitor gets **Red**.
+
+---
+
+## 🔍 Why KNN Feels Intuitive
+
+- You are “asking the neighbors” rather than relying on a hidden formula.
+- No big training phase—computations happen when the visitor arrives.
+- You can draw the town and see exactly why the decision was made.
+
+---
+
+## 💡 Tips for Beginners
+
+- **Choosing K**  
+  - Try small values (3, 5) first.  
+  - If K is too small, one noisy neighbor can mislead.  
+  - If K is too large, you might ignore local details.
+
+- **Feature Scaling**  
+  Make sure your map’s axes (features) use the same units, or one measurement might dominate.
+
+- **Visualize It**  
+  Plot your points on a graph and draw circles around your visitor for different K values to see how neighbors change.
+
+---
+
+With this story in mind, you can now explore KNN in code or on paper—simply by measuring distances and asking your closest friends for advice!`
+    }
+  ]
+}
 ];
 
 export default data;
