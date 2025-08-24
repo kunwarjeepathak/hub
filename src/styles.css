@@ -3,8 +3,9 @@ header {
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #fafafa;
-  border-bottom: 1px solid #ddd;
+  background: #003366;
+  border-bottom: 1px solid #003366;
+  color: #fff;
 }
 
 .logo {
@@ -27,8 +28,9 @@ header input {
 .sidebar {
   width: 200px;
   background: #003366;
+  color: #fff;
   padding: 1rem;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #003366;
 }
 
 .sidebar ul {
@@ -57,7 +59,7 @@ header input {
 
 /* Q&A Card */
 .qa-card {
-  border: 1px solid #ccc;
+  border: 1px solid #003366;
   margin-bottom: 1rem;
   border-radius: 4px;
   overflow: hidden;
@@ -65,7 +67,8 @@ header input {
 
 .q-header,
 .sub-header {
-  background: #eee;
+  background: #003366;
+  color: #fff;
   border: none;
   width: 100%;
   text-align: left;

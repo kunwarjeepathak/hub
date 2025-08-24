@@ -7,7 +7,7 @@ interface HeaderProps {
 export default function Header({ onSearch }: HeaderProps) {
   return (
     <header>
-      <div className="logo">Understand and Clear Concepts in Story telling format</div>
+      <div className="logo">AIML-Hub</div>
       <input
         type="search"
         placeholder="Search questions..."
